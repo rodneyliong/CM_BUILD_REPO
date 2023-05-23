@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<mz:configuration format-version="1.0">
+    <mz:data>
+        <dr.Configuration:dr.Configuration Folder="json" Key="MZ1639559614413" Name="UFL_SingleLineRecords" Owner="mzadmin" Type="Ultra Format" encrypted="false" ver="6.0">
+            <STRING:Access_Groups_-----.read_-----.write_-----.execute>
+                <value value="Administrator"/>
+                <value value="Administrator"/>
+                <value value="Administrator"/>
+            </STRING:Access_Groups_-----.read_-----.write_-----.execute>
+            <null:Auxiliary_Data/>
+            <dr.UltraFormatConfig:Data ver="1.0">
+                <Definition><![CDATA[external SingleLine: terminated_by(0xA) {
+    ascii data: dynamic_size(remaining_size);
+};
+
+in_map SingleLineIM : external(SingleLine), target_internal(SingleLine_TI) {automatic;};
+decoder SingleLineDec : in_map(SingleLineIM);
+
+out_map SingleLineOM : external(SingleLine), internal(SingleLine_TI) {automatic;};
+encoder SingleLineEnc : out_map(SingleLineOM);]]></Definition>
+                <IsValid value="true"/>
+            </dr.UltraFormatConfig:Data>
+            <documentation value=""/>
+            <parameters value=""/>
+            <Current_Comment/>
+        </dr.Configuration:dr.Configuration>
+    </mz:data>
+    <mz:referenced-data/>
+</mz:configuration>
